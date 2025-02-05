@@ -1,0 +1,8 @@
+# Arquivo .gitignore
+target/
+.settings/
+.classpath
+.project
+.idea/
+*.iml
+.vscode/
