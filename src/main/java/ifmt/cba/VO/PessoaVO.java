@@ -13,18 +13,18 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name="pessoa")
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Inheritance(strategy = InheritanceType.JOINED) // Mudando a estratégia para JOINED
 public abstract class PessoaVO implements Serializable {
 
-
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE) // Mudando para SEQUENCE
     @Column(name = "codigo")
     private Long codigo;
 
     @Column(name = "nome")
     private String nome;
 
+    // Getters e Setters permanecem os mesmos
     public Long getCodigo() {
         return codigo;
     }
@@ -40,6 +40,4 @@ public abstract class PessoaVO implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
-    
 }

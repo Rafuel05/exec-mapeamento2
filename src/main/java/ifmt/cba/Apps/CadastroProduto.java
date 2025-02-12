@@ -84,9 +84,4 @@ public class CadastroProduto {
             }
         }
     }
-
-    // Helper method to validate price
-    private static boolean isValidPrice(Float price) {
-        return price != null && price > 0;
-    }
 }
