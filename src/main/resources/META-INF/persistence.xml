@@ -14,6 +14,8 @@
         <class>ifmt.cba.VO.ClienteVO</class>
         <class>ifmt.cba.VO.VendedorVO</class>
         <class>ifmt.cba.VO.FornecedorVO</class>
+        <class>ifmt.cba.VO.VendaVO</class>
+        <class>ifmt.cba.VO.ItemVendaVO</class>
         
         <properties>
             <!-- Propriedades de conexão com o banco -->
