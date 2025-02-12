@@ -13,6 +13,7 @@
         <class>ifmt.cba.VO.PessoaJuridicaVO</class>
         <class>ifmt.cba.VO.ClienteVO</class>
         <class>ifmt.cba.VO.VendedorVO</class>
+        <class>ifmt.cba.VO.FornecedorVO</class>
         
         <properties>
             <!-- Propriedades de conexão com o banco -->

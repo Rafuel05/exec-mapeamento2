@@ -1,6 +1,8 @@
 package ifmt.cba.VO;
 
 import jakarta.persistence.*;
+import java.util.List;
+import java.util.ArrayList;
 
 @Entity
 @Table(name = "produto")
@@ -17,12 +19,14 @@ public class ProdutoVO {
     @Column(name = "preco_venda", nullable = false)
     private Float precoVenda;
 
-    // Se precisar da relação com GrupoProduto
     @ManyToOne
     @JoinColumn(name = "grupo_codigo", referencedColumnName = "codigo")
     private GrupoProdutoVO grupo;
 
-    // Getters e Setters
+    @ManyToMany(mappedBy = "produtos")
+    private List<FornecedorVO> fornecedores = new ArrayList<>();
+
+    // Getters e Setters existentes
     public Long getCodigo() {
         return codigo;
     }
@@ -53,5 +57,27 @@ public class ProdutoVO {
 
     public void setGrupo(GrupoProdutoVO grupo) {
         this.grupo = grupo;
+    }
+
+    // Novos getters e setters para fornecedores
+    public List<FornecedorVO> getFornecedores() {
+        return fornecedores;
+    }
+
+    public void setFornecedores(List<FornecedorVO> fornecedores) {
+        this.fornecedores = fornecedores;
+    }
+
+    public void addFornecedor(FornecedorVO fornecedor) {
+        if (fornecedor != null && !this.fornecedores.contains(fornecedor)) {
+            this.fornecedores.add(fornecedor);
+            fornecedor.addProduto(this);
+        }
+    }
+
+    public void removeFornecedor(FornecedorVO fornecedor) {
+        if (this.fornecedores.remove(fornecedor)) {
+            fornecedor.removeProduto(this);
+        }
     }
 }
