@@ -11,6 +11,8 @@
         <class>ifmt.cba.VO.PessoaVO</class>
         <class>ifmt.cba.VO.PessoaFisicaVO</class>
         <class>ifmt.cba.VO.PessoaJuridicaVO</class>
+        <class>ifmt.cba.VO.ClienteVO</class>
+        <class>ifmt.cba.VO.VendedorVO</class>
         
         <properties>
             <!-- Propriedades de conexão com o banco -->
